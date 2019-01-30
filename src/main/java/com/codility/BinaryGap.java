@@ -16,5 +16,3 @@ public class BinaryGap {
         return result;
     }
 }
-
-//
