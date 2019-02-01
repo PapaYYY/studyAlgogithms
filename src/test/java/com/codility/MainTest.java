@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class MainTest {
 
     @Test
-    public void binaryGapTest(){
+    public void binaryGapTest() {
         BinaryGap bg = new BinaryGap();
         Assert.assertEquals(bg.solution(9), 2);
         Assert.assertEquals(bg.solution(529), 4);
@@ -18,43 +18,63 @@ public class MainTest {
     }
 
     @Test(dataProvider = "oddOccurrenncesInArray")
-    public void oddOccurrenncesInArray02Test(int[] array, int result){
+    public void oddOccurrenncesInArray02Test(int[] array, int result) {
         OddOccurrencesInArray02 ooInArr = new OddOccurrencesInArray02();
         Assert.assertEquals(ooInArr.solution(array), result);
     }
 
     @Test(dataProvider = "cyclicRotation")
-    public void cyclicRotationTest(int[] array, int rotationNumber, int[] result){
+    public void cyclicRotationTest(int[] array, int rotationNumber, int[] result) {
         CyclicRotation02 cr = new CyclicRotation02();
         Assert.assertEquals(cr.solution(array, rotationNumber), result);
     }
 
-    @DataProvider(name="oddOccurrenncesInArray")
-    public Object[][] oddOccurrenncesInArray(){
+    @Test
+    public void frogJumpTest() {
+        FrogJump03 fj = new FrogJump03();
+        Assert.assertEquals(fj.solution(10, 85, 30), 3);
+        Assert.assertEquals(fj.solution(1, 10, 5), 2);
+        Assert.assertEquals(fj.solution(2, 8, 2), 3);
+    }
+
+    @Test(dataProvider = "permMissingElem")
+    public void permMissingElemTets(int[] A, int result) {
+        PermMissingElem03 pme = new PermMissingElem03();
+        Assert.assertEquals(pme.solution(A), result);
+    }
+
+    @Test(dataProvider = "tapeEquilibrium")
+    public void tapeEquilibriumTest(int[] A, int result) {
+        TapeEquilibrium03 te = new TapeEquilibrium03();
+        Assert.assertEquals(te.solution(A), result);
+    }
+
+    @DataProvider(name = "oddOccurrenncesInArray")
+    public Object[][] oddOccurrenncesInArray() {
         return new Object[][]{
                 {
-                    new int[]{9, 3 , 9, 3, 9, 7, 9},
+                        new int[]{9, 3, 9, 3, 9, 7, 9},
                         7
                 },
                 {
-                    new int[]{1, 2 , 2, 4, 5, 4, 5},
+                        new int[]{1, 2, 2, 4, 5, 4, 5},
                         1
                 }
         };
     }
 
-    @DataProvider(name="cyclicRotation")
-    public Object[][] cyclicRotation(){
+    @DataProvider(name = "cyclicRotation")
+    public Object[][] cyclicRotation() {
         return new Object[][]{
                 {
-                        new int[]{3, 8 , 9, 7, 6},
+                        new int[]{3, 8, 9, 7, 6},
                         1,
-                        new int[]{6, 3 , 8, 9, 7}
+                        new int[]{6, 3, 8, 9, 7}
                 },
                 {
-                        new int[]{3, 8 , 9, 7, 6},
+                        new int[]{3, 8, 9, 7, 6},
                         3,
-                        new int[]{9, 7 , 6, 3, 8}
+                        new int[]{9, 7, 6, 3, 8}
                 },
                 {
                         new int[]{0, 0, 0},
@@ -66,6 +86,42 @@ public class MainTest {
                         4,
                         new int[]{1, 2, 3, 4},
                 }
+        };
+    }
+
+    @DataProvider(name = "permMissingElem")
+    public Object[][] permMissingElem() {
+        return new Object[][]{
+                {
+                        new int[]{2, 3, 1, 5},
+                        4
+                },
+                {
+                        new int[]{2, 3, 4, 5, 6},
+                        1
+                },
+                {
+                        new int[]{1, 2, 3, 4, 5},
+                        6
+                }
+        };
+    }
+
+    @DataProvider(name = "tapeEquilibrium")
+    public Object[][] tapeEquilibrium() {
+        return new Object[][]{
+                {
+                        new int[]{3, 1, 2, 4, 3},
+                        1
+                },
+                {
+                        new int[]{-3, 1, -2},
+                        0
+                },
+                {
+                        new int[]{1, 2},
+                        1
+                },
         };
     }
 
