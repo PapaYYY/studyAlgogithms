@@ -49,6 +49,12 @@ public class MainTest {
         Assert.assertEquals(te.solution(A), result);
     }
 
+    @Test(dataProvider = "permCheck")
+    public void permCheckTest(int[] A, int result) {
+        PermCheck04 pch = new PermCheck04();
+        Assert.assertEquals(pch.solution(A), result);
+    }
+
     @DataProvider(name = "oddOccurrenncesInArray")
     public Object[][] oddOccurrenncesInArray() {
         return new Object[][]{
@@ -121,6 +127,20 @@ public class MainTest {
                 {
                         new int[]{1, 2},
                         1
+                },
+        };
+    }
+
+    @DataProvider(name = "permCheck")
+    public Object[][] permCheck() {
+        return new Object[][]{
+                {
+                        new int[]{4, 1, 3, 2},
+                        1
+                },
+                {
+                        new int[]{4, 1, 3},
+                        0
                 },
         };
     }
