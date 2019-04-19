@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 public class MainTest {
 
     @Test
@@ -62,9 +64,9 @@ public class MainTest {
     }
 
     @Test(dataProvider = "maxCounters")
-    public void maxCountersTest(int[] A, int N, int result) {
+    public void maxCountersTest(int[] A, int N, int[] result) {
         MaxCounters04 mc = new MaxCounters04();
-        Assert.assertEquals(mc.solution(N, A), result);
+        Assert.assertTrue(Arrays.equals(mc.solution(N, A), result));
     }
 
     @DataProvider(name = "oddOccurrenncesInArray")

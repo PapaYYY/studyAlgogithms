@@ -8,8 +8,8 @@ public class MaxCounters04 {
         int max = 0;
         for (int counter : A) {
             if (counter <= N) {
-                result[counter]++;
-                if(result[counter]>max) max=result[counter];
+                result[counter - 1]++;
+                if (result[counter - 1] > max) max = result[counter - 1];
             } else Arrays.fill(result, max);
         }
         return result;
