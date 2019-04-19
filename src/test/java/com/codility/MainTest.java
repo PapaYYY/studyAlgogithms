@@ -69,6 +69,12 @@ public class MainTest {
         Assert.assertTrue(Arrays.equals(mc.solution(N, A), result));
     }
 
+    @Test(dataProvider = "missingInteger")
+    public void missingIntegerTest(int[] A, int result) {
+        MissingInteger04 mi = new MissingInteger04();
+        Assert.assertEquals(mi.solution(A), result);
+    }
+
     @DataProvider(name = "oddOccurrenncesInArray")
     public Object[][] oddOccurrenncesInArray() {
         return new Object[][]{
@@ -182,6 +188,24 @@ public class MainTest {
                         new int[]{3, 4, 4, 6, 1, 4, 4},
                         5,
                         new int[]{3, 2, 2, 4, 2},
+                },
+        };
+    }
+
+    @DataProvider(name = "missingInteger")
+    public Object[][] missingInteger() {
+        return new Object[][]{
+                {
+                        new int[]{1, 3, 6, 4, 1, 2},
+                        5
+                },
+                {
+                        new int[]{1, 2, 3},
+                        4
+                },
+                {
+                        new int[]{-1,-3},
+                        1
                 },
         };
     }
