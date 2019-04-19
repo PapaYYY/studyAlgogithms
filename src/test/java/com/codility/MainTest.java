@@ -61,6 +61,12 @@ public class MainTest {
         Assert.assertEquals(fro.solution(length, A), result);
     }
 
+    @Test(dataProvider = "maxCounters")
+    public void maxCountersTest(int[] A, int N, int result) {
+        MaxCounters04 mc = new MaxCounters04();
+        Assert.assertEquals(mc.solution(N, A), result);
+    }
+
     @DataProvider(name = "oddOccurrenncesInArray")
     public Object[][] oddOccurrenncesInArray() {
         return new Object[][]{
@@ -164,6 +170,17 @@ public class MainTest {
                         5,
                         -1
                 }
+        };
+    }
+
+    @DataProvider(name = "maxCounters")
+    public Object[][] maxCounters() {
+        return new Object[][]{
+                {
+                        new int[]{3, 4, 4, 6, 1, 4, 4},
+                        5,
+                        new int[]{3, 2, 2, 4, 2},
+                },
         };
     }
 
