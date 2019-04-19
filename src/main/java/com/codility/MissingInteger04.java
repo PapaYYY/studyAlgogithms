@@ -15,7 +15,7 @@ public class MissingInteger04 {
         }
         // searching max value in transformed array
         for (int number : A) if (number > max) max = number;
-        int[] count = new int[max];
+        int[] count = new int[max+1];
         for (int number : A) {
             count[number]++;
         }
