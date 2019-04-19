@@ -204,7 +204,15 @@ public class MainTest {
                         4
                 },
                 {
-                        new int[]{-1,-3},
+                        new int[]{-1, -2},
+                        1
+                },
+                {
+                        new int[]{-1, -3},
+                        1
+                },
+                {
+                        new int[]{-1, -2, -3, -4},
                         1
                 },
         };
