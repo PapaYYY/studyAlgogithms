@@ -55,6 +55,12 @@ public class MainTest {
         Assert.assertEquals(pch.solution(A), result);
     }
 
+    @Test(dataProvider = "frogRiverOne")
+    public void frogRiverOneTest(int[] A, int length, int result) {
+        FrogRiverOne04 fro = new FrogRiverOne04();
+        Assert.assertEquals(fro.solution(length, A), result);
+    }
+
     @DataProvider(name = "oddOccurrenncesInArray")
     public Object[][] oddOccurrenncesInArray() {
         return new Object[][]{
@@ -142,6 +148,17 @@ public class MainTest {
                         new int[]{4, 1, 3},
                         0
                 },
+        };
+    }
+
+    @DataProvider(name = "frogRiverOne")
+    public Object[][] frogRiverOne() {
+        return new Object[][]{
+                {
+                        new int[]{1, 3, 1, 4, 2, 3, 5, 4},
+                        5,
+                        6
+                }
         };
     }
 
